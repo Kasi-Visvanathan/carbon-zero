@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Jazz</title>
+        <meta charset="utf-8">
+        {% load static %}
+	    <link rel="stylesheet" href="{% static '..//static/css/landing.css' %}">
+
+        
+	</head>
+
+<body>
+            <label class="jazz"> Carbon</label>
+        
+    <div class="header">
+		<h2> <pre><span class="hover">Home</span>    <span class="hover">Features</span>    <span class="hover">Portfolio</span>    <span class="hover">Blog</span>    <span class="hover">About Us</span>    <span class="hover">Contact Us</span>  <span class="hover"></span>  <span class="hover">{% load static %}<img src="{% static 'images/facebook.png' %}" height="30px" alt="fb" /></span>  <span class="hover"><img src="{% static 'images/twitter.png' %}" height="30px" alt="twitter" /> </span></pre></h2>
+        <hr noshade="0" size="5px">
+    </div>
+
+
+
+     <p> {% load static %} <img class="image" src="{% static 'images/bms.jpg' %}" alt="BMS" /> </p>
+  
+
+
+
+     <div class="login">
+     	<form action="" method="POST">
+     		{% csrf_token %}
+            <table  width="100%" cellspacing="1">
+                 <tr>
+                    <td colspan="2">
+						<h2 align="center" ><span>Login To Continue</span></h2></td></tr>
+				<tr><td align="right"><p><span>Username</span></p></td>
+                    <td align="right">
+						<input type="text" name="username"></td></tr>
+                    <tr> <br/> </tr>
+				<tr><td align="right"><p><span>Password</span></p></td>
+                    <td align="right">
+                    <input type="password" name="password"></td></tr>
+				<tr><td colspan="2" align="right"><small><span class="hover">Forgot password?</span></small></td></tr>
+                <tr><td colspan="2" align="center"><br>
+					<input type="submit" name="signin" value="Sign In"></td></tr>
+				<tr><td colspan="2" align="center"><br><p id="f4"><b><span>Don't have an account?</span></b></p></td></tr>
+				<tr><td colspan="2" align="center"> <span class="hover">Join Us!</span></td></tr>
+				<tr><td colspan="2" align="center"> <span class="hover">{{ error }}</span></td></tr>
+                    </table></form>
+    </div>
+
+    <footer class="footer">
+		<table width:100% cellspacing="4" align="center" >
+			<tr>
+				<td >
+					<h4> Get to Know Us </h4>
+					<h5> <span class="hover">About Us</span> <br/>
+						<span class="hover">Quotes </span><br/>
+						<span class="hover">Getting Started </span><br/>
+						<span class="hover">Help </span><br/>
+						<span class="hover">Gift a Smile </span><br/>
+					</h5>
+				</td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td>
+					<h4> Save energy with Us </h4>
+					<h5><span class="hover">Docs</span> <br/>
+						<span class="hover">Beginner's Guide</span> <br/>
+						<span class="hover">Developer's Guide</span> <br/>
+						<span class="hover">License</span> <br/>
+						<span class="hover">Alternative Implementation</span> <br/>
+					</h5>
+				</td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td> <br/> </td>
+				<td>
+					<h4> Let Us Help You </h4>
+					<h5><span class="hover">Your Account </span><br/>
+						<span class="hover">Presentation</span> <br/>
+						<span class="hover">Abstract</span> <br/>
+						<span class="hover">Synopsis</span><br/>
+						<span class="hover">Report</span> <br/>
+						
+					</h5>
+				</td>				
+			</tr>
+		</table>
+    </footer>
+
+    </body>
+</html>

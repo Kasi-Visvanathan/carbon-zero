@@ -1,0 +1,106 @@
+
+            * {
+                 box-sizing: border-box;
+             }
+            
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+			opacity:;
+			background-image: url(bg1.jpg) ;
+			
+			
+        }
+
+        .jazz 
+        {
+            float: left;
+            background-color: aquamarine;
+            text-align: left;
+            font-family: Baskerville old face;
+            font-size: 60px;
+            font-weight: bold;
+            padding: 40px;
+            height:14%;
+            width:30%;
+        }
+        .carbon{
+            font-color:#0000c9;
+        }
+
+		.hover:hover
+        {
+            color:whitesmoke;
+        }
+			
+		a:hover
+		{ 
+			color:whitesmoke;
+		}
+			
+		a span:hover{
+				color:indianred;
+			}
+
+        .header 
+        {
+            float:right;
+			text-align: center;
+            font-family:'Courier New', Courier, monospace;
+            padding: 15px;
+            text-align :right;
+            height:14%;
+            width: 70%;
+            background-color: aqua;
+        }
+
+        .login 
+        {
+			
+			float: right;
+			text-emphasis-color:orange;
+            width:29%;
+			height:60%;
+            padding: 45px;
+            border: 5px dashed gray;
+        }
+			
+		.login span
+			{
+				color:orange;
+			}
+
+        .image
+        {
+            float:left;
+			border-radius: 10px;
+            width:71%;
+			height:60%;
+        }
+
+        .footer 
+        {
+			
+			color: white;
+            float:left;
+            text-align: center;
+            vertical-align: middle;
+			padding:20px;
+            background-color:#232F3E;
+            width:100%;
+            font-size: 20px;
+            height:25%;
+        }
+			
+		td {
+				color: #BFC2C4;
+			}
+			
+		td h4{
+				color: white;
+			}
+        
+        .fl
+        {
+            text-align: right;
+        }
+        

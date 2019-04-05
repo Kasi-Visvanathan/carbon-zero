@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Building</title>
+   <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+
+      function drawChart1() {
+        var data1 = google.visualization.arrayToDataTable([
+          ['Date', 'Power'],
+          ['01/04/19',  40],
+          ['02/04/19',  35],
+          ['03/04/19',  22],
+          ['04/04/19',  37],
+          ['05/04/19',40]
+        ]);
+
+        var options1 = {
+          title: 'Light power consumption',
+          hAxis: {title: 'Days',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart1 = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart1.draw(data1, options1);
+      }
+    </script>
+
+    <head>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart2() {
+        var data2 = google.visualization.arrayToDataTable([
+          ['Days',  'Energy'],
+          ['01/04/19', 1.4],
+          ['02/04/19', 2.4],
+          ['03/04/19',2.96],
+          ['04/04/19',4.62],
+          ['05/04/19',5.09]
+        ]);
+
+        var options2 = {
+          title: 'Energy consumed',
+          vAxis: {title: 'Accumulated Energy'},
+          isStacked: true
+        };
+
+        var chart2 = new google.visualization.SteppedAreaChart(document.getElementById('chart_div2'));
+
+        chart2.draw(data2, options2);
+      }
+ </script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart3);
+
+      function drawChart3() {
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['Appliance', 'Power'],
+          ['Hall-Light',     35],
+          ['Living Room-AC', 800],
+          ['Visitors Room-Fan', 80],
+          ['Kitchen-oven', 600],
+          ['Toilet-light',    7]
+        ]);
+
+        var options3 = {
+          title: 'Overall Comparision'
+        };
+
+        var chart3 = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart3.draw(data3, options3);
+      }
+    </script>
+
+
+
+</head>
+
+<body>
+	
+	<div id="chart_div" style="width: 100%; height: 500px;"></div>
+	<div id="chart_div2" style="width: 900px; height: 500px;"></div>
+	<div id="piechart" style="width: 900px; height: 500px;"></div>
+	<form id="form" name = "switch" action="" method="POST">
+  {% csrf_token %}
+  {% if status == 'True' %}
+    <input type="hidden" id="passvalue" name="tooff" value="False">
+  {% else %}
+    <input type="hidden" id="passvalue" name="toon" value="True">
+  {% endif %}
+
+    
+
+{% if status == 'True' %}
+{% load static %}
+<input type="image" name="submit" id="digiswitch" src="{% static 'images/radioON.png' %}" width="200" height="100"  alt="switch"/>
+{% else %}
+<input type="image" name="submit" id="digiswitch" src="{% static 'images/radioOFF.png' %}" width="200" height="100"  alt="switch"/>{% endif %}
+</form>
+
+{{ power }}<br>
+{{ energy }}
+</body>
+</html>
+

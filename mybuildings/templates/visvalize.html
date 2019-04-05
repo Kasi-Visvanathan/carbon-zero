@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Building</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static '..//static/css/visvalize.css' %}">
+  <!--{% load static %}
+    <script  src = "{% static 'js/switch.js' %}" type='text/javascript'></script> -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization() {
+      // Some raw data (not necessarily accurate)
+      var data = google.visualization.arrayToDataTable([
+        ["Time", "Hall-Light", "Visitor Room-Fan", "Kitchen-oven", "Living Room-AC", "Toilet-Light"],
+        ['10/03/2019', 45, 120, 522, 998, 2],
+        ['11/03/2019', 45, 11, 599, 1268, 1],
+        ['12/03/2019', 45, 65, 587, 807, 2],
+        ['13/03/2019', 45, 54, 615, 968, 2],
+        ['14/03/2019', 45, 90, 629, 1026, 1]
+      ]);
+
+      var options = {
+        title: 'Average Power Consumed',
+        vAxis: {
+          title: 'Power'
+        },
+        hAxis: {
+          title: 'Time'
+        },
+        seriesType: 'bars',
+      };
+
+      var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+  </script>
+
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data1 = google.visualization.arrayToDataTable([
+        ['Year', 'units'],
+        ['Jan', 600],
+        ['Feb', 540],
+        ['Mar', 650],
+        ['Aprl', 800]
+      ]);
+
+      var options1 = {
+        title: 'Energy consumed',
+        curveType: 'function',
+        legend: {
+          position: 'bottom'
+        }
+      };
+
+      var chart1 = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart1.draw(data1, options1);
+    }
+
+  </script>
+
+
+
+
+
+</head>
+
+<body>
+
+  <div class="col-3 header">
+    <h1> JAZZ </h1>
+  </div>
+
+  <div class="col-9 topright">
+    <h2>
+      <pre>                            <span>Home</span>    <span>Features</span>    <span>Portfolio</span>    <span>Blog</span>    <span >About Us</span>    <span>Contact Us</span>  <span></span>  <span><img src="facebook.png" height="30px" alt="fb" /></span>  <span><img src="twitter.png" height="30px" alt="twitter" /> </span></pre>
+    </h2>
+  </div>
+
+  <div class="col-12 right">
+    <img class="right round-img" src="{% static 'images/profile.png' %}">
+    <span class="right">
+      <pre>  Aditya  </pre></span>
+  </div>
+
+  <div class="col-12 center">
+    <h2> Overall Consumption </h2>
+  </div>
+
+  <div class="col-6 center">
+    <h3> Average Power Consumed </h3>
+  </div>
+
+  <div class="col-6 center">
+    <h3> Average Energy Consumed </h3>
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-6 center power" id="chart_div"></div>
+
+  <div class="col-1">
+    <br />
+  </div>
+
+
+  <div class="col-6 center power" id="curve_chart"></div>
+
+  <div class="col-12 center">
+    <br />
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-4 center textbg" id="text_power">
+    <label>Average power consume :</label>
+    <label class="num-but">{{ average_power }}</label>
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-5 center textbg" id="text_Energy">
+    <label>Total Energy consumed after 01/01/2019 :</label>
+    <label class="num-but">{{ total_energy }}</label>
+    <br>
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-4 center textbg">
+    <label>Average power consume :</label>
+    <label class="num-but">{{ average_power }}</label>
+  </div>
+
+  <div class="col-2 center">
+    <br />
+  </div>
+
+  <div class="col-1 center dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Monthly</a>
+      <a href="#">Weekly</a>
+      <a href="#">Daily</a>
+    </div>
+  </div>
+
+  <div class="col-1 center">
+    <br />
+  </div>
+
+  <div class="col-1 center">
+    <a href="#"> <input class="textbg" type="submit" name="reset" value="Reset"> </a>
+  </div>
+
+
+  <div class="col-12 center"> <br /> </div>
+
+<!--
+  <div class="col-6 center">
+    <a href="#"> <img class="floor" src="floor1.jpg"> </a>
+  </div>
+
+
+  <div class="col-6 center">
+    <a href="#"> <img class="floor" src="floor2.jpg"> </a>
+  </div>
+-->
+
+  <div class="col-6 center"> Floor 1</div>
+
+  <div class="col-6 center"> Floor 2</div>
+
+  <div class="col-12 center">
+    <br />
+  </div>
+
+
+
+
+
+
+  <!--
+<form id="form" name = "switch" action="" method="POST">
+  {% csrf_token %}
+  {% if status == 'True' %}
+    <input type="hidden" id="passvalue" name="tooff" value="False">
+  {% else %}
+    <input type="hidden" id="passvalue" name="toon" value="True">
+  {% endif %}
+
+    
+
+{% if status == 'True' %}
+{% load static %}
+<input type="image" name="submit" id="digiswitch" src="{% static 'images/radioON.png' %}" width="200" height="100"  alt="switch"/>
+{% else %}
+<input type="image" name="submit" id="digiswitch" src="{% static 'images/radioOFF.png' %}" width="200" height="100"  alt="switch"/>{% endif %}
+</form>
+-->
+
+  <ul style="list-style-type:none">
+    {% for floor in Floor_object %}
+
+    {% if floor.floor_name == "First Floor" %}
+
+    <form class="to_room" name="floor1" action="" method="POST">
+      {% csrf_token %}
+      <li>
+        
+        <div class="col-6 center">
+        
+        <input type="image" class="floor" name="floor1" src="{% static 'images/floor1.jpeg' %}" height="350" width="350" formaction="" formmethod="POST">
+        <input type="hidden" id="f1" name="floor1" value="Floor1">
+      </div>
+      <label>{{ floor.floor_name }}</label>
+      </li>
+    </form>
+
+
+    {% elif floor.floor_name == "Ground Floor" %}
+
+    <form class="to_room" name="floor0" action="" method="POST">
+      {% csrf_token %}
+      <li>
+        
+         <div class="col-6 center">
+        
+        <input type="image"  class="floor" name="floor0" src="{% static 'images/floor2.jpeg' %}" height="350" width="350">
+        <input type="hidden" id="f0" name="floor0" value="Floor0">
+      </div>
+      <label>{{ floor.floor_name }}</label>
+      </li>
+    </form>
+
+    {% endif %}
+
+    {% endfor %}
+
+
+</body>
+
+</html>
